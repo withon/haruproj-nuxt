@@ -1,0 +1,253 @@
+<template>
+  <!--聚焦-->
+  <section class="swiper">
+    <div class="swiper-bg-color">
+      <div class="swiper-bg-image" :style="{ backgroundImage: swiperBg01 }">
+        <div class="swiper-container">
+          <div class="swiper-character swiper-character-01"></div>
+          <div class="swiper-card">
+            <img src="/images/brand/853485E06F3F0B49717080958A9234CF.png" alt="春日计划" />
+            <h1 class="mt-4 mb-4">春日计划2024——特别二次元不插电音乐会</h1>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+            <div class="mt-2 mb-2">
+              <h2>郑州</h2>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script lang="ts" setup>
+const windowWidth = ref(1000);
+const swiperBg01 = computed(() => {
+  return windowWidth.value >= 992
+    ? "url('/images/taoyou/bg_01.jpg')"
+    : "url('/images/taoyou/bg_s_01.jpg')";
+});
+
+/**
+ * 监控宽度改变高度
+ */
+const widthListenerMountedFn = () => {
+  windowWidth.value = document.documentElement.clientWidth;
+  // 监听窗口大小变化
+  const handleResize = () => {
+    windowWidth.value = document.documentElement.clientWidth;
+  };
+  window.addEventListener('resize', handleResize);
+  // 在组件卸载时移除事件监听器
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+  });
+};
+
+onMounted(() => {
+  if (import.meta.client) {
+    widthListenerMountedFn();
+  }
+});
+</script>
+
+<style lang="scss" scoped>
+.swiper-bg-color {
+  height: 100%;
+  margin: 0 auto;
+  background: center top no-repeat white;
+}
+
+.swiper-bg-image {
+  height: 100%;
+  margin: 0 auto;
+  background: center top no-repeat;
+}
+
+.swiper-character-01 {
+  background-image: url('/images/taoyou/taoyou_01.webp');
+}
+
+.swiper-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-character {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.swiper-card {
+  font-family: 'Noto Sans SC', sans-serif;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  color: #000;
+  border-radius: 15px;
+  z-index: 1;
+  padding: 30px;
+  overflow: auto;
+  /* 自定义滚动条的整体样式 */
+  &::-webkit-scrollbar {
+    width: 8px; /* 设置滚动条的宽度 */
+    background-color: transparent; /* 设置滚动条的背景为透明 */
+  }
+
+  /* 自定义滚动轨迹的样式 */
+  &::-webkit-scrollbar-track {
+    background-color: transparent; /* 设置滚动轨迹的背景为透明 */
+  }
+
+  /* 自定义滚动滑块的样式 */
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.5); /* 设置滚动滑块为灰色半透明 */
+    border-radius: 6px; /* 设置滚动滑块的圆角 */
+    visibility: hidden; /* 默认隐藏滚动滑块 */
+  }
+
+  /* 自定义鼠标悬浮时滚动滑块的样式 */
+  &::-webkit-scrollbar-thumb:hover {
+    visibility: visible; /* 鼠标悬浮时显示滚动滑块 */
+  }
+
+  /* 设置滚动条滑块在滚动时的样式 */
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #999; /* 滚动时的滑块颜色 */
+  }
+
+  /* 隐藏滚动条两侧的箭头 */
+  &::-webkit-scrollbar-button {
+    display: none; /* 隐藏滚动条两侧的箭头 */
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: breakpoint-max(md)) {
+  .swiper-bg-image {
+    background-size: cover;
+  }
+  .swiper {
+    height: 1000px;
+  }
+  .swiper-container {
+    width: 100%;
+  }
+  .swiper-character {
+    height: calc(70% - 70px);
+    width: calc(100% - 20px);
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-position: center 0;
+  }
+  .swiper-card {
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height: 70%;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (min-width: breakpoint-min(md)) and (max-width: breakpoint-max(lg)) {
+  .swiper-bg-image {
+    background-size: cover;
+  }
+  .swiper {
+    height: 1100px;
+  }
+  .swiper-container {
+    width: 100%;
+  }
+  .swiper-character {
+    height: calc(80% - 70px);
+    width: calc(80% - 20px);
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-position: center 0;
+  }
+  .swiper-card {
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height: 70%;
+    width: 75%;
+  }
+}
+
+@media (min-width: breakpoint-min(lg)) {
+  .swiper-bg-image {
+    background-size: auto 100%;
+  }
+  .swiper {
+    height: 800px;
+  }
+  .swiper-container {
+    max-width: 980px;
+  }
+  .swiper-character {
+    height: 650px;
+    width: 500px;
+    top: 100px;
+    left: 0;
+  }
+  .swiper-card {
+    width: 400px;
+    max-height: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    margin: auto;
+  }
+}
+</style>
