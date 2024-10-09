@@ -1,296 +1,39 @@
 <template>
   <!--聚焦-->
-  <section class="swiper">
-    <div class="swiper-bg-color">
-      <div class="swiper-bg-image" :style="{ backgroundImage: swiperBg01 }">
-        <div class="swiper-container">
-          <div class="swiper-character swiper-character-01"></div>
-          <div class="swiper-card">
-            <img src="/images/brand/853485E06F3F0B49717080958A9234CF.png" alt="春日计划" />
-            <h1 class="mt-4 mb-4">春日计划2024——特别二次元不插电音乐会</h1>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
-            </div>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
-            </div>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
-            </div>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
-            </div>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
-            </div>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
-            </div>
-            <div class="mt-2 mb-2">
-              <h2>郑州</h2>
-              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+  <section class="section-light swiper">
+    <Transition v-for="ty in taoyouHis" name="swiperfade">
+      <div class="swiper-part" v-show="selTyId === ty.id">
+        <div class="swiper-bg-color">
+          <div
+            class="swiper-bg-image"
+            :style="{ backgroundImage: 'url(' + (swiperBgType ? ty.pcImg : ty.mobileImg) + ')' }"
+          >
+            <div class="swiper-container">
+              <div
+                class="swiper-character"
+                :style="{ backgroundImage: 'url(' + ty.characterImg + ')' }"
+              ></div>
+              <div class="swiper-card">
+                <img src="/images/brand/853485E06F3F0B49717080958A9234CF.png" alt="春日计划" />
+                <h1 class="mt-4 mb-4">春日计划2024——特别二次元不插电音乐会</h1>
+                <div v-html="ty.content"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Transition>
+
+    <!--桃幽小头像横条-->
     <div class="swiper-scroll" :style="{ justifyContent: swiperScrollJustifyContent }">
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2001</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part swiper-scroll-part-active">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2002</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2003</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2004</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2005</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2006</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2007</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2008</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2009</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2010</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2011</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2012</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2013</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2014</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2015</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2016</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2017</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2018</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2019</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2020</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2021</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2022</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2023</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2024</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2025</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2026</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2026</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2028</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2029</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2030</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2031</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2032</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2033</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2034</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2035</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2036</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2037</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2038</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2039</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2040</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2041</span>
-        </a>
-      </div>
-      <div class="swiper-scroll-part">
-        <a href="javascript:void(0)">
-          <img src="/images/member/yueshou.jpeg" alt="Picture" />
-          <span>2042</span>
+      <div
+        v-for="ty in taoyouHis"
+        class="swiper-scroll-part"
+        :class="{ 'swiper-scroll-part-active': selTyId === ty.id }"
+      >
+        <a @click="selTyFn(ty.id)">
+          <img :src="ty.miniImg" :alt="ty.tip" />
+          <span>{{ ty.tip }}</span>
         </a>
       </div>
     </div>
@@ -302,7 +45,10 @@
       <div class="row justify-content-center pt-5 pb-5">
         <div class="col-10 col-lg-7">
           <div class="text-center">
-            <h2 class="mb-5"><img src="/images/taoyou/Qban.png" height="58"> <span>“桃幽”是谁？</span></h2>
+            <h2 class="mb-5">
+              <img src="/images/taoyou/Qban.png" height="58" alt="Q版桃幽" />
+              <span>“桃幽”是谁？</span>
+            </h2>
             <p class="mt-5 mb-5">
               「桃幽」以黑色长直发和桃花瞳孔的形象示人，着一身融合中西元素的桃花小礼服，展现出高贵优雅的气质。桃幽的内在则隐藏着活泼可爱的一面，形成有趣的反差。她出生于音乐世家，精通小提琴演奏，并对古董乐器修复有着浓厚的兴趣。桃幽以时装设计专业为背景，致力于将古典优雅融入现代设计。她的故事和才华使她在全球范围内拥有广泛的名气，活跃于音乐、设计和艺术等多个领域。
             </p>
@@ -311,16 +57,10 @@
       </div>
     </div>
   </section>
-
 </template>
 
 <script lang="ts" setup>
 const windowWidth = ref(1000);
-const swiperBg01 = computed(() => {
-  return windowWidth.value >= 992
-    ? "url('/images/taoyou/bg_01.jpg')"
-    : "url('/images/taoyou/bg_s_01.jpg')";
-});
 
 const swiperScrollJustifyContent = ref('center');
 
@@ -350,6 +90,66 @@ onMounted(() => {
     widthListenerMountedFn();
   }
 });
+
+const swiperBgType = computed(() => {
+  return windowWidth.value >= 992;
+});
+
+const taoyouHis = ref([
+  {
+    id: '1',
+    title: '春日计划2024——特别二次元不插电音乐会',
+    content: `<h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+              <h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+              <h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>`,
+    tip: '2022',
+    pcImg: '/images/taoyou/bg_01.jpg',
+    mobileImg: '/images/taoyou/bg_s_01.jpg',
+    characterImg: '/images/taoyou/taoyou_01.webp',
+    miniImg: '/images/member/yueshou.jpeg',
+  },
+  {
+    id: '2',
+    title: '春日计划2024——特别二次元不插电音乐会',
+    content: `<h4>苏州</h4>
+              <p>2025年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+              <h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+              <h4>郑州</h4>
+              <p>2024年 9月 98日(周日) 15:30<br />郑州大剧院</p>`,
+    tip: '2023',
+    pcImg: '/images/brand/spotlight.webp',
+    mobileImg: '/images/brand/spotlight.webp',
+    characterImg: '/images/member/yueshou.jpeg',
+    miniImg: '/images/taoyou/Qban.png',
+  },
+  {
+    id: '3',
+    title: '春日计划2024——特别二次元不插电音乐会',
+    content: `<h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+              <h4>南京</h4>
+              <p>2024年 9月 22日(周一) 15:30<br />郑州大剧院</p>
+              <h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>
+              <h4>郑州</h4>
+              <p>2024年 9月 22日(周日) 15:30<br />郑州大剧院</p>`,
+    tip: '2024',
+    pcImg: '/images/taoyou/bg_01.jpg',
+    mobileImg: '/images/taoyou/bg_s_01.jpg',
+    characterImg: '/images/taoyou/taoyou_01.webp',
+    miniImg: '/images/member/yueshou.jpeg',
+  },
+]);
+
+const selTyId = ref('1');
+
+const selTyFn = (id: string) => {
+  selTyId.value = id;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -359,6 +159,7 @@ onMounted(() => {
 
 .swiper-scroll {
   position: absolute;
+  z-index: 1000;
   display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
@@ -402,6 +203,7 @@ onMounted(() => {
   &::-webkit-scrollbar-button {
     display: none; /* 隐藏滚动条两侧的箭头 */
   }
+
   @media screen and (max-width: breakpoint-max(md)) {
     top: 56px;
     height: 100px;
@@ -441,6 +243,10 @@ onMounted(() => {
     width: 90px;
   }
 
+  a {
+    cursor: pointer;
+  }
+
   img {
     height: 100%;
     width: 100%;
@@ -473,6 +279,24 @@ onMounted(() => {
 
 .swiper-scroll-part-active {
   border: 4px rgb(0, 170, 255) solid;
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+
+.swiperfade-enter-active,
+.swiperfade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.swiperfade-enter-from,
+.swiperfade-leave-to {
+  opacity: 0;
+}
+
+.swiper-part {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .swiper-bg-color {
@@ -510,7 +334,6 @@ onMounted(() => {
   position: absolute;
   background: rgba(255, 255, 255, 0.75);
   text-align: center;
-  color: #000;
   border-radius: 15px;
   padding: 30px;
   overflow: auto;
@@ -557,14 +380,6 @@ onMounted(() => {
 
   h1 {
     font-size: 22px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 16px;
   }
 }
 
