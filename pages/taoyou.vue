@@ -295,6 +295,23 @@
       </div>
     </div>
   </section>
+
+  <!--桃幽介绍-->
+  <section class="section-light">
+    <div class="container">
+      <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-10 col-lg-7">
+          <div class="text-center">
+            <h2 class="mb-5"><img src="/images/taoyou/Qban.png" height="58"> <span>“桃幽”是谁？</span></h2>
+            <p class="mt-5 mb-5">
+              「桃幽」以黑色长直发和桃花瞳孔的形象示人，着一身融合中西元素的桃花小礼服，展现出高贵优雅的气质。桃幽的内在则隐藏着活泼可爱的一面，形成有趣的反差。她出生于音乐世家，精通小提琴演奏，并对古董乐器修复有着浓厚的兴趣。桃幽以时装设计专业为背景，致力于将古典优雅融入现代设计。她的故事和才华使她在全球范围内拥有广泛的名气，活跃于音乐、设计和艺术等多个领域。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </template>
 
 <script lang="ts" setup>
@@ -365,20 +382,20 @@ onMounted(() => {
 
   /* 自定义滚动滑块的样式 */
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 170, 255, 0.5); /* 设置滚动滑块为灰色半透明 */
+    background-color: rgba(0, 170, 255, 0.4); /* 设置滚动滑块为灰色半透明 */
     border-radius: 6px; /* 设置滚动滑块的圆角 */
     visibility: visible; /* 默认隐藏滚动滑块 */
   }
 
   /* 自定义鼠标悬浮时滚动滑块的样式 */
   &::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 170, 255, 0.8); /* 设置滚动滑块为灰色半透明 */
+    background-color: rgba(0, 170, 255, 0.5); /* 设置滚动滑块为灰色半透明 */
     visibility: visible; /* 鼠标悬浮时显示滚动滑块 */
   }
 
   /* 设置滚动条滑块在滚动时的样式 */
   &::-webkit-scrollbar-thumb:active {
-    background-color: rgb(0, 170, 255); /* 滚动时的滑块颜色 */
+    background-color: rgba(0, 170, 255, 0.8); /* 滚动时的滑块颜色 */
   }
 
   /* 隐藏滚动条两侧的箭头 */
@@ -409,8 +426,8 @@ onMounted(() => {
   box-sizing: content-box;
   flex: 0 0 auto;
   position: relative;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 6px;
+  margin-right: 6px;
   border-radius: 15px;
   background-color: white;
   @media (max-width: breakpoint-max(lg)) {
@@ -511,19 +528,20 @@ onMounted(() => {
 
   /* 自定义滚动滑块的样式 */
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(128, 128, 128, 0.5); /* 设置滚动滑块为灰色半透明 */
+    background-color: rgba(0, 170, 255, 0.4); /* 设置滚动滑块为灰色半透明 */
     border-radius: 6px; /* 设置滚动滑块的圆角 */
     visibility: hidden; /* 默认隐藏滚动滑块 */
   }
 
   /* 自定义鼠标悬浮时滚动滑块的样式 */
   &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 170, 255, 0.5); /* 设置滚动滑块为灰色半透明 */
     visibility: visible; /* 鼠标悬浮时显示滚动滑块 */
   }
 
   /* 设置滚动条滑块在滚动时的样式 */
   &::-webkit-scrollbar-thumb:active {
-    background-color: #999; /* 滚动时的滑块颜色 */
+    background-color: rgba(0, 170, 255, 0.8); /* 滚动时的滑块颜色 */
   }
 
   /* 隐藏滚动条两侧的箭头 */
@@ -563,7 +581,7 @@ onMounted(() => {
   .swiper-character {
     height: calc(70% - 70px);
     width: calc(100% - 20px);
-    top: 60px;
+    top: 160px;
     left: 0;
     right: 0;
     margin: auto;
@@ -574,7 +592,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     margin: auto;
-    max-height: 70%;
+    max-height: 60%;
     width: calc(100% - 30px);
   }
 }
@@ -592,7 +610,7 @@ onMounted(() => {
   .swiper-character {
     height: calc(80% - 70px);
     width: calc(80% - 20px);
-    top: 60px;
+    top: 160px;
     left: 0;
     right: 0;
     margin: auto;
@@ -603,7 +621,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     margin: auto;
-    max-height: 70%;
+    max-height: 60%;
     width: 75%;
   }
 }
@@ -621,15 +639,15 @@ onMounted(() => {
   .swiper-character {
     height: 650px;
     width: 500px;
-    top: 100px;
+    top: 70px;
     left: 0;
   }
   .swiper-card {
-    width: 400px;
-    max-height: 80%;
-    top: 50%;
+    width: 500px;
+    max-height: 70%;
+    top: 45%;
     transform: translateY(-50%);
-    right: 30px;
+    right: 0px;
     margin: auto;
   }
 }
