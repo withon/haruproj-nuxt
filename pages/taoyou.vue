@@ -15,7 +15,7 @@
               ></div>
               <div class="swiper-card">
                 <img src="/images/brand/853485E06F3F0B49717080958A9234CF.png" alt="春日计划" />
-                <h1 class="mt-4 mb-4">春日计划2024——特别二次元不插电音乐会</h1>
+                <h1 class="mt-4 mb-4">{{ ty.title }}</h1>
                 <div v-html="ty.content"></div>
               </div>
             </div>
@@ -462,7 +462,7 @@ const selTyFn = (id: string) => {
     max-height: 70%;
     top: 45%;
     transform: translateY(-50%);
-    right: 0px;
+    right: 0;
     margin: auto;
   }
 }
