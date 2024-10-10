@@ -44,14 +44,18 @@
             <div class="text-center">
               <!-- <h2 class="mb-5">乐团简介</h2> -->
               <div class="d-sm-block">
-                <img src="/images/brand/853485E06F3F0B49717080958A9234CF.png" style="width: 70%" />
+                <img
+                  src="/images/brand/853485E06F3F0B49717080958A9234CF.png"
+                  style="width: 70%"
+                  alt="春日计划乐团"
+                />
               </div>
               <p class="mt-5 mb-5">
                 「春日计划」成立于2021年8月，乐团成员由热爱动漫、游戏并且热衷管弦乐的小伙伴发起成立。现已固定成为12人的中型室内乐团，涵盖了弦乐、木管、钢琴、吉他和打击乐五大类音色，使得室内乐团的听感变的立体而丰富，充满生机。我们的成员几乎均来自中央音乐学院、中国音乐学院等，也都是精挑细选的精兵强将。除了扎实的技术功底，每位乐手老师都对动漫画、游戏等某一个ACG领域如数家珍，完美表达“二次元”音乐内核。
               </p>
-              <a class="nav-link" href="./member.html" target="_self">
+              <NuxtLink to="/member" target="_self">
                 <button type="button" class="btn btn-outline-dark btn-lg">了解更多</button>
-              </a>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -79,16 +83,40 @@
     </section>
     <!--巡演动态-->
     <section class="section-light">
-      <div class="container">
+      <div class="container text-center">
         <div class="row justify-content-center pt-5 pb-5">
-          <div class="col-10 col-sm-8">
-            <div class="text-center">
-              <h2 class="mb-5">巡演计划</h2>
-              <p class="mt-5 mb-5">占位，后续改为图文</p>
-              <p class="mt-5 mb-5">占位，后续改为图文</p>
-              <p class="mt-5 mb-5">占位，后续改为图文</p>
-              <button type="button" class="btn btn-outline-dark btn-lg">更多动态</button>
+          <div class="col-12 col-sm-12">
+            <h2 class="mb-5">巡演计划</h2>
+            <div class="container">
+              <div class="row">
+                <div v-for="i in [1, 2, 3]" class="col-12 col-md-6 col-lg-4">
+                  <div class="card dynamic-card">
+                    <img
+                      :src="
+                        i % 2 ? '/images/backgrounds/taoyou.png' : '/images/member/yueshou.jpeg'
+                      "
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">标题</h5>
+                      <p class="card-text">
+                        测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容
+                      </p>
+                      <a
+                        href="https://show.bilibili.com/platform/detail.html?id=92853"
+                        target="_blank"
+                        class="btn btn-outline-dark"
+                        >详情</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <NuxtLink to="/dynamic" target="_self">
+              <button type="button" class="btn btn-outline-dark btn-lg">更多动态</button>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -113,5 +141,10 @@
   .holder {
     height: 100%;
   }
+}
+
+.dynamic-card {
+  height: calc(100% - 20px);
+  margin-bottom: 15px;
 }
 </style>
