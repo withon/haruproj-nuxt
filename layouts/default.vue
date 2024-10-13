@@ -24,12 +24,10 @@
             <NuxtLink class="nav-link" to="/" target="_self">首页</NuxtLink>
           </li>
           <li class="nav-item">
-            <!-- 做成时间流 -->
             <NuxtLink class="nav-link" to="/dynamic" target="_self">乐团动态</NuxtLink>
           </li>
           <li class="nav-item">
-            <!-- 参考a叔首页最近更新，点击跳转详情 -->
-            <a class="nav-link" href="#" target="_self">往期项目</a>
+            <NuxtLink class="nav-link" to="/hisproject" target="_self">往期项目</NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/member" target="_self">团队成员</NuxtLink>
@@ -40,9 +38,6 @@
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/#footer" target="_self">联系我们</NuxtLink>
           </li>
-          <!-- <li class="nav-item">
-          <a class="nav-link" href="https://github.com/withon/withon.github.io" target="_blank">更新日记</a>
-        </li> -->
         </ul>
       </div>
     </div>

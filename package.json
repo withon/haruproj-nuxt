@@ -16,11 +16,13 @@
     "@vueuse/core": "^11.1.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "luxon": "^3.5.0",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@types/luxon": "^3.4.2",
     "eslint": "^9.11.1",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",

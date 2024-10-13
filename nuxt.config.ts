@@ -5,10 +5,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  css: [
-    'bootstrap/dist/css/bootstrap.min.css',
-    'bootstrap-icons/font/bootstrap-icons.scss',
-  ],
+  css: ['bootstrap/dist/css/bootstrap.min.css', 'bootstrap-icons/font/bootstrap-icons.scss'],
   vite: {
     css: {
       preprocessorOptions: {
