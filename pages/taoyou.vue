@@ -1,7 +1,7 @@
 <template>
   <!--聚焦-->
   <section class="section-light swiper">
-    <Transition v-for="ty in taoyouHis" name="swiperfade">
+    <Transition v-for="ty in taoyouHisList" name="swiperfade">
       <div class="swiper-part" v-show="selTyId === ty.id">
         <div class="swiper-bg-color">
           <div
@@ -27,7 +27,7 @@
     <!--桃幽小头像横条-->
     <div class="swiper-scroll" :style="{ justifyContent: swiperScrollJustifyContent }">
       <div
-        v-for="ty in taoyouHis"
+        v-for="ty in taoyouHisList"
         class="swiper-scroll-part"
         :class="{ 'swiper-scroll-part-active': selTyId === ty.id }"
       >
@@ -47,11 +47,9 @@
           <div class="text-center">
             <h2 class="mb-5">
               <img src="/images/taoyou/Qban.png" height="58" alt="Q版桃幽" />
-              <span>“桃幽”是谁？</span>
+              <span>{{ taoyouInfo.title }}</span>
             </h2>
-            <p class="mt-5 mb-5">
-              「桃幽」以黑色长直发和桃花瞳孔的形象示人，着一身融合中西元素的桃花小礼服，展现出高贵优雅的气质。桃幽的内在则隐藏着活泼可爱的一面，形成有趣的反差。她出生于音乐世家，精通小提琴演奏，并对古董乐器修复有着浓厚的兴趣。桃幽以时装设计专业为背景，致力于将古典优雅融入现代设计。她的故事和才华使她在全球范围内拥有广泛的名气，活跃于音乐、设计和艺术等多个领域。
-            </p>
+            <p class="mt-5 mb-5">{{ taoyouInfo.content }}</p>
           </div>
         </div>
       </div>
@@ -61,14 +59,18 @@
 
 <script lang="ts" setup>
 const windowWidth = ref(1000);
-
+// true，大于992用大图。false，小于992用小图
+const swiperBgType = computed(() => {
+  return windowWidth.value >= 992;
+});
+// 小标签排列方向(无需滚动时居中/滚动时靠左)
 const swiperScrollJustifyContent = ref('center');
 
 /**
  * 监控宽度改变高度
  */
 const widthListenerMountedFn = () => {
-  // 监听窗口大小变化
+  // 监听窗口大小变化。1.给windowWidth赋值。2.计算是否需要滚动改变小标签排列方向
   const handleResize = () => {
     windowWidth.value = document.documentElement.clientWidth;
     let swiperScroll = document.querySelector('div .swiper-scroll');
@@ -91,11 +93,8 @@ onMounted(() => {
   }
 });
 
-const swiperBgType = computed(() => {
-  return windowWidth.value >= 992;
-});
-
-const taoyouHis = ref([
+// 桃幽历史列表
+const taoyouHisList = ref([
   {
     id: '1',
     title: '春日计划2024——特别二次元不插电音乐会',
@@ -145,11 +144,22 @@ const taoyouHis = ref([
   },
 ]);
 
+// 当前选中的小标签
 const selTyId = ref('1');
 
+/**
+ * 选择小标签
+ * @param id
+ */
 const selTyFn = (id: string) => {
   selTyId.value = id;
 };
+
+const taoyouInfo = ref({
+  title: '“桃幽”是谁？',
+  content:
+    '「桃幽」以黑色长直发和桃花瞳孔的形象示人，着一身融合中西元素的桃花小礼服，展现出高贵优雅的气质。桃幽的内在则隐藏着活泼可爱的一面，形成有趣的反差。她出生于音乐世家，精通小提琴演奏，并对古董乐器修复有着浓厚的兴趣。桃幽以时装设计专业为背景，致力于将古典优雅融入现代设计。她的故事和才华使她在全球范围内拥有广泛的名气，活跃于音乐、设计和艺术等多个领域。',
+});
 </script>
 
 <style lang="scss" scoped>

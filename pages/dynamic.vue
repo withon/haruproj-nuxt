@@ -6,48 +6,14 @@
     <section class="section-light pt-4 pb-4">
       <div class="cd-container">
         <div class="cd-timeline-block">
-          <div class="cd-timeline-img bg-warning">
-            <!-- <img src="/images/svg/badge-sd-fill.svg" alt="Picture"> -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="white"
-              class="bi bi-badge-sd-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M10.338 5.968h-.844v4.06h.844c1.116 0 1.622-.667 1.622-2.02 0-1.354-.51-2.04-1.622-2.04Z"
-              />
-              <path
-                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm5.077 7.114c1.521 0 2.378-.764 2.378-1.88 0-1.007-.642-1.473-1.613-1.692l-.932-.216c-.527-.114-.821-.351-.821-.712 0-.466.39-.804 1.046-.804.637 0 1.028.33 1.103.76h1.125c-.058-.923-.849-1.692-2.22-1.692-1.322 0-2.24.717-2.24 1.815 0 .91.588 1.446 1.52 1.657l.927.215c.624.145.923.36.923.778 0 .492-.391.83-1.13.83-.707 0-1.155-.342-1.234-.808H2.762c.052.95.79 1.75 2.315 1.75ZM8.307 11h2.19c1.81 0 2.684-1.107 2.684-3.015 0-1.894-.861-2.984-2.685-2.984H8.308V11Z"
-              />
-            </svg>
+          <div class="cd-timeline-img" :style="{backgroundColor: 'green'}">
+            <i class="bi-camera-video-fill" role="img" aria-label="GitHub"></i>
           </div>
           <div class="cd-timeline-content">
             <h2>有内容有图片的标题</h2>
             <p>
               测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容
             </p>
-            <div class="mb-1">
-              <img
-                class="bd-placeholder-img card-img-top"
-                src="/images/member/yueshou.jpeg"
-                style="object-fit: cover"
-                alt="Placeholder"
-              />
-            </div>
-            <!-- <a href="http://www.helloweba.com/view-blog-285.html" class="cd-read-more" target="_blank">阅读全文</a> -->
-            <span class="cd-date">2015-01-06</span>
-          </div>
-        </div>
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img bg-success">
-            <img src="/images/svg/cd-icon-picture.svg" alt="Picture" />
-          </div>
-          <div class="cd-timeline-content">
-            <h2>无内容有图片的标题</h2>
-            <p></p>
             <div class="mb-1">
               <img
                 class="bd-placeholder-img card-img-top"
@@ -65,46 +31,13 @@
             <span class="cd-date">2015-01-06</span>
           </div>
         </div>
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img bg-info">
-            <img src="/images/svg/cd-icon-picture.svg" alt="Picture" />
-          </div>
-          <div class="cd-timeline-content">
-            <h2>只有文字没有图</h2>
-            <p>
-              测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容
-            </p>
-            <!-- <a href="http://www.helloweba.com/view-blog-285.html" class="cd-read-more" target="_blank">阅读全文</a> -->
-            <span class="cd-date">2015-01-06</span>
-          </div>
-        </div>
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img bg-primary">
-            <img src="/images/svg/cd-icon-picture.svg" alt="Picture" />
-          </div>
-          <div class="cd-timeline-content">
-            <h2>有内容有图片的标题</h2>
-            <p>
-              测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容
-            </p>
-            <div class="mb-1">
-              <img
-                class="bd-placeholder-img card-img-top"
-                src="/images/member/yueshou.jpeg"
-                style="object-fit: cover"
-                alt="Placeholder"
-              />
-            </div>
-            <!-- <a href="http://www.helloweba.com/view-blog-285.html" class="cd-read-more" target="_blank">阅读全文</a> -->
-            <span class="cd-date">2015-01-06</span>
-          </div>
-        </div>
       </div>
     </section>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>
 
 <style lang="scss" scoped>
 /* --------------------------------
@@ -186,17 +119,14 @@ img {
     0 0 0 4px white,
     inset 0 2px 0 rgba(0, 0, 0, 0.08),
     0 3px 0 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  img,
-  svg {
+  i {
     display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
+    font-size: 28px;
+    color: white;
   }
 
   .cd-picture {
