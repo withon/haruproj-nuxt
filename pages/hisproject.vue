@@ -25,8 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import { dateTimeFormatter } from '~/utils/format';
-
 const spotLightImg = ref('/images/backgrounds/member_spotlight.jpeg');
 
 const projHis = ref([

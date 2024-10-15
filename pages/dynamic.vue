@@ -5,48 +5,73 @@
     <!-- 团队动态 -->
     <section class="section-light pt-4 pb-4">
       <div class="cd-container">
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img" :style="{backgroundColor: 'green'}">
-            <i class="bi-camera-video-fill" role="img" aria-label="GitHub"></i>
+        <div v-for="dy in dynamicList" class="cd-timeline-block">
+          <div class="cd-timeline-svg" :style="{ backgroundColor: dy.svgColor || 'gray' }">
+            <i :class="dy.svgClass" role="img" :aria-label="dy.svgClass"></i>
           </div>
           <div class="cd-timeline-content">
-            <h2>有内容有图片的标题</h2>
+            <h2>{{ dy.title }}</h2>
             <p>
-              测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容
+              {{ dy.content }}
             </p>
-            <div class="mb-1">
-              <img
-                class="bd-placeholder-img card-img-top"
-                src="/images/member/yueshou.jpeg"
-                style="object-fit: cover"
-                alt="Placeholder"
-              />
+            <div class="mb-1 container">
+              <div class="row">
+                <img
+                  v-for="dyImg in dy.dynamicImgList"
+                  :class="{ 'col-6': dy.dynamicImgList.length > 1 }"
+                  class="cd-timeline-img"
+                  :src="dyImg"
+                  :alt="dy.title"
+                  @click="imgShow(dyImg)"
+                />
+              </div>
             </div>
-            <a
-              href="http://www.helloweba.com/view-blog-285.html"
-              class="cd-read-more"
-              target="_blank"
-              >阅读全文</a
+            <a v-if="dy.detailHref" :href="dy.detailHref" class="cd-read-more" target="_blank"
+              >详情</a
             >
-            <span class="cd-date">2015-01-06</span>
+            <span class="cd-date">{{ dateTimeFormatter(dy.time) }}</span>
           </div>
         </div>
       </div>
     </section>
   </div>
+  <div v-show="previewFlag" class="preview-contatiner" @click="imgHide">
+    <img :src="previewImage" alt="预览" />
+  </div>
 </template>
 
 <script lang="ts" setup>
+const dynamicList = ref([
+  {
+    id: '1',
+    title: '标题',
+    content: '测试内容',
+    svgClass: 'bi-camera-video-fill',
+    svgColor: 'rgb(0,170,0)',
+    dynamicImgList: ['/images/member/yueshou.jpeg', '/images/member/yueshou.jpeg'],
+    detailHref: 'https://show.bilibili.com/platform/detail.html',
+    time: '202410132207',
+  },
+]);
+
+/**
+ * 图片全屏放大功能
+ */
+const previewFlag = ref(false);
+const previewImage = ref('/images/brand/projectharuTitle.webp');
+const imgShow = (imageUrl: string) => {
+  previewImage.value = imageUrl;
+  previewFlag.value = true;
+};
+const imgHide = () => {
+  previewFlag.value = false;
+};
 </script>
 
 <style lang="scss" scoped>
 /* --------------------------------
 时间流
 -------------------------------- */
-img {
-  max-width: 100%;
-}
-
 /* --------------------------------
   Modules - reusable parts of our design
   -------------------------------- */
@@ -108,7 +133,7 @@ img {
   }
 }
 
-.cd-timeline-img {
+.cd-timeline-svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -127,18 +152,6 @@ img {
     display: block;
     font-size: 28px;
     color: white;
-  }
-
-  .cd-picture {
-    background: #75ce66;
-  }
-
-  .cd-movie {
-    background: #c03b44;
-  }
-
-  .cd-advertisement {
-    background: #f0ca45;
   }
 
   @media only screen and (min-width: 1170px) {
@@ -225,8 +238,9 @@ img {
 
   .cd-read-more {
     float: right;
-    padding: 0.8em 1em;
+    padding: 0.5em 0.8em;
     background: #acb7c0;
+    text-decoration: none;
     color: white;
     border-radius: 0.25em;
     @media only screen and (min-width: 1170px) {
@@ -247,6 +261,13 @@ img {
       font-size: 1rem;
     }
   }
+}
+
+.cd-timeline-img {
+  padding: 2px;
+  max-width: 100%;
+  height: auto;
+  cursor: zoom-in;
 }
 
 a.cd-read-more:hover {
@@ -277,6 +298,23 @@ a.cd-read-more:hover {
         text-align: right;
       }
     }
+  }
+}
+
+.preview-contatiner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 80%;
+    max-height: 80%;
   }
 }
 </style>

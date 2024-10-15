@@ -9,11 +9,11 @@ const format17 = 'yyyyMMddHHmmssSSS';
 
 /**
  * 日期时间
- * @param date 日期/时间
+ * @param datetime 日期/时间
  * @param formatter 格式化成的字符串
  */
 export function dateTimeFormatter(
-  datetime: DateTime | Date | string,
+  datetime: DateTime | Date | string | number,
   formatter?: string | null | undefined,
 ): string {
   if (!datetime) {
@@ -32,6 +32,12 @@ export function dateTimeFormatter(
     } else {
       date = DateTime.fromISO(date);
     }
+  } else if (typeof date === 'number') {
+    if (date > 10000000000) {
+      date = DateTime.fromMillis(date);
+    } else {
+      date = DateTime.fromSeconds(date);
+    }
   }
   let formatDate;
   if (formatter) {
@@ -39,5 +45,5 @@ export function dateTimeFormatter(
   } else {
     formatDate = date.toISODate();
   }
-  return formatDate ? formatDate : datetime.toString();
+  return formatDate || datetime.toString();
 }
