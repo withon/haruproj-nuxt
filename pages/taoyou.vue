@@ -14,7 +14,7 @@
                 :style="{ backgroundImage: 'url(' + ty.characterImg + ')' }"
               ></div>
               <div class="swiper-card">
-                <img src="/images/brand/853485E06F3F0B49717080958A9234CF.png" alt="春日计划" />
+                <img src="/images/projectharuZh.png" alt="春日计划" />
                 <h1 class="mt-4 mb-4">{{ ty.title }}</h1>
                 <div v-html="ty.content"></div>
               </div>
@@ -46,7 +46,7 @@
         <div class="col-10 col-lg-7">
           <div class="text-center">
             <h2 class="mb-5">
-              <img src="/images/taoyou/Qban.png" height="58" alt="Q版桃幽" />
+              <img src="/images/Qban.png" height="58" alt="Q版桃幽" />
               <span>{{ taoyouInfo.title }}</span>
             </h2>
             <p class="mt-5 mb-5">{{ taoyouInfo.content }}</p>
@@ -123,7 +123,7 @@ const taoyouHisList = ref([
     pcImg: '/images/brand/spotlight.webp',
     mobileImg: '/images/brand/spotlight.webp',
     characterImg: '/images/member/yueshou.jpeg',
-    miniImg: '/images/taoyou/Qban.png',
+    miniImg: '/images/Qban.png',
   },
   {
     id: '3',

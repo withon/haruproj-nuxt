@@ -5,7 +5,7 @@
   >
     <div class="container">
       <NuxtLink class="navbar-brand" to="/" target="_self"
-        ><img src="/images/brand/projectharuTitle.webp" style="height: 26px"
+        ><img src="/images/projectharuTitle.webp" style="height: 26px"
       /></NuxtLink>
       <button
         class="navbar-toggler"

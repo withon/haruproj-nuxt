@@ -1,10 +1,7 @@
 <template>
   <div>
     <!--聚焦-->
-    <section
-      class="spotlight"
-      :style="{ backgroundImage: 'url(' + indexInfo.spotlightImg + ')' }"
-    >
+    <section class="spotlight" :style="{ backgroundImage: 'url(' + indexInfo.spotlightImg + ')' }">
       <div class="holder">
         <div class="container d-flex justify-content-center align-items-center">
           <div
@@ -13,7 +10,7 @@
             <div class="col-10">
               <div class="text-center mt-5">
                 <img
-                  src="/images/brand/projectharuTitle.webp"
+                  src="/images/projectharuTitle.webp"
                   style="width: 800px"
                   class="img-fluid animated"
                   data-animation-in="jackInTheBox"
@@ -47,11 +44,7 @@
           <div class="col-10 col-lg-7">
             <div class="text-center">
               <div class="d-sm-block">
-                <img
-                  src="/images/brand/853485E06F3F0B49717080958A9234CF.png"
-                  style="width: 70%"
-                  alt="春日计划乐团"
-                />
+                <img src="/images/projectharuZh.png" style="width: 70%" alt="春日计划乐团" />
               </div>
               <p class="mt-5 mb-5">
                 {{ indexInfo.bandIntroText }}
@@ -110,9 +103,13 @@
                       <p class="card-text">
                         {{ tour.content }}
                       </p>
-                      <a :href="tour.detailHref" target="_blank" class="btn btn-outline-dark"
-                        >详情</a
-                      >
+                      <a
+                        v-if="tour.detailHref"
+                        :href="tour.detailHref"
+                        target="_blank"
+                        class="btn btn-outline-dark"
+                        >详情
+                      </a>
                     </div>
                   </div>
                 </div>
