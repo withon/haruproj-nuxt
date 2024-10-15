@@ -22,6 +22,7 @@
                   class="cd-timeline-img"
                   :src="dyImg"
                   :alt="dy.title"
+                  loading="lazy"
                   @click="imgShow(dyImg)"
                 />
               </div>
@@ -48,7 +49,7 @@ const dynamicList = ref([
     content: '测试内容',
     svgClass: 'bi-camera-video-fill',
     svgColor: 'rgb(0,170,0)',
-    dynamicImgList: ['/images/member/yueshou.jpeg', '/images/member/yueshou.jpeg'],
+    dynamicImgList: ['/images/member/yueshou.jpeg', '/images/member/yueshou.jpeg', 'https://i0.hdslb.com/bfs/new_dyn/46784f803e75c1b94f0df94a8a201ed2669978141.jpg'],
     detailHref: 'https://show.bilibili.com/platform/detail.html',
     time: '202410132207',
   },
@@ -58,7 +59,7 @@ const dynamicList = ref([
  * 图片全屏放大功能
  */
 const previewFlag = ref(false);
-const previewImage = ref('/images/brand/projectharuTitle.webp');
+const previewImage = ref('/images/projectharuTitle.webp');
 const imgShow = (imageUrl: string) => {
   previewImage.value = imageUrl;
   previewFlag.value = true;
